@@ -1,3 +1,16 @@
 #get rid of emojis and special characters Twitter API, find and store words that have sentimental value (negative or positive)
 #within results how many times is the word mentioned
 #https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/integrate/build-a-rule#limits
+curl -X POST 'https://api.twitter.com/2/tweets/search/stream/rules' \
+#to submit data to be processed to the server.
+#change link
+-H "Content-type: application/json" \
+-H "Authorization: Bearer $BEARER_TOKEN" -d \
+'{
+  "add": [
+    {"value": "cat has:media", "tag": "racism in media"},
+    {"value": "cat has:media -grumpy", "tag": "hate speech in media"},
+    {"value": "meme", "tag": "bad language"},
+    {"value": "meme has:images"}
+  ]
+}'
