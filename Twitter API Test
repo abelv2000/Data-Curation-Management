@@ -159,3 +159,6 @@ combine = tweet_batch.combine_first(sent_scores) #gets rid of text***
 # combine
 
 combine.mean()
+#get rid of emojis and special characters Twitter API, find and store words that have sentimental value (negative or positive)
+#within results how many times is the word mentioned
+#https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/integrate/build-a-rule#limits
